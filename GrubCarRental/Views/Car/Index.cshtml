@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Car>
+@{
+    ViewData["Title"] = "Car";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Car List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Car" asp-action="Create" class="btn btn-primary">
+                Add a car
+            </a>
+        </div>
+        <form class="d-flex col-6" asp-controller="" asp-action="">
+            <input class="form-control me-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Brand
+            </th>
+            <th>
+                Year
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Transmission
+            </th>
+            <th>
+                Plate Number
+            </th>
+            <th>
+                Seats
+            </th>
+            <th class="text-center">
+                Edit
+            </th>
+            <th class="text-center">
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>
+                    @car.CarId
+                </td>
+                <td>
+                    @car.Brand
+                </td>
+                <td>
+                    @car.Year
+                </td>
+                <td>
+                    @car.Type
+                </td>
+                <td>
+                    @car.Transmission
+                </td>
+                <td>
+                    @car.PlateNumber
+                </td>
+                <td>
+                    @car.SeatNumber
+                </td>
+                <td>
+                    <a asp-controller="Car" asp-action="Edit" asp-route-id="@car.CarId" class="btn btn-primary mx-2">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                </td>
+                <td>
+                    <a asp-controller="Car" asp-action="Delete" asp-route-id="@car.CarId" class="btn btn-danger mx-2">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

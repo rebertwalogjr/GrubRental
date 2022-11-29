@@ -1,0 +1,39 @@
+﻿@model Renter
+@{
+    ViewData["Title"] = "Delete Renter";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Renter</h2>
+            <hr />
+        </div>
+        <input asp-for="RenterId" hidden />
+        <div class="mb-3">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Address"></label>
+            <input asp-for="Address" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Gender"></label>
+            <input asp-for="Gender" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="LicenseNumber"></label>
+            <input asp-for="LicenseNumber" class="form-control" disabled />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+        <a asp-controller="Renter" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Cancel
+        </a>
+    </div>
+</form>
+

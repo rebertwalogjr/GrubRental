@@ -1,0 +1,42 @@
+﻿@model Car
+@{
+    ViewData["Title"] = "Delete Car Details";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Car</h2>
+            <hr />
+        </div>
+        <input asp-for="CarId" hidden />
+        <div class="mb-3">
+            <label asp-for="Brand"></label>
+            <input asp-for="Brand" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Year"></label>
+            <input asp-for="Year" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Type"></label>
+            <input asp-for="Type" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Transmission"></label>
+            <input asp-for="Transmission" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="PlateNumber"></label>
+            <input asp-for="PlateNumber" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="SeatNumber"></label>
+            <input asp-for="SeatNumber" class="form-control" disabled />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+        <a asp-controller="Car" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Cancel
+        </a>
+    </div>
+</form>

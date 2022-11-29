@@ -1,0 +1,43 @@
+﻿@model Transaction
+@{
+    ViewData["Title"] = "Add";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Rent a Car</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="BorrowedDate"></label>
+            <input asp-for="BorrowedDate" class="form-control" />
+            <span asp-validation-for="BorrowedDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ReturnDate"></label>
+            <input asp-for="ReturnDate" class="form-control" />
+            <span asp-validation-for="ReturnDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CarId"></label>
+            <input asp-for="CarId" class="form-control"/>
+            <span asp-validation-for="CarId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="RenterId"></label>
+            <input asp-for="RenterId" class="form-control" />
+            <span asp-validation-for="RenterId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Save</button>
+        <a asp-controller="Transaction" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Cancel
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
